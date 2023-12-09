@@ -1,6 +1,0 @@
-
-h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(®³ý8Ì¶˜¢º1
-x
-java:S1450"VRemove the "binding" field and declare it as a local variable in the relevant methods.(È÷Åðøÿÿÿÿ8„Ý™¢º1
-M
-java:S1068"+Remove this unused "binding" private field.(È÷Åðøÿÿÿÿ8½¬¡â»1

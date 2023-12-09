@@ -89,6 +89,21 @@ public class User {
         this.position = position;
     }
 
+    public User(String id,String name,String passWord,String position,String lastLogin,String currentDate,String currentDatee,String hometown,String imgavatar) {
+        this.id = id;
+        this.name = name;
+        this.passWord = passWord;
+        this.homeTown = hometown;
+        this.avatar = imgavatar;
+        this.position = position;
+        this.lastLogin = lastLogin;
+        this.createDate = currentDate;
+        this.lastAction = currentDatee;
+    }
+
+    public User() {
+    }
+
     public User(String id, String name, String homeTown, String avatar, String position, String lastLogin, String lastAction) {
         this.id = id;
         this.name = name;

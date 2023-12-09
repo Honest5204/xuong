@@ -1,57 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".Fragment.FraPhieuNhap.AddPhieuNhap">
+    tools:context=".Fragment.FraPhieuNhap.AddPhieuNhapFragment">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:text="@string/CREATEENTRYFORM"
+        android:textColor="#D60C0C"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/b_n_mu_n_th_m_m_y_s_n_ph_m" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="TẠO PHIẾU NHẬP"
-            android:textColor="#D60C0C"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+    <SeekBar
+        android:id="@+id/seekBar2"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:progress="0" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bạn muốn thêm mấy sản phẩm?"/>
+    <Spinner
+        android:id="@+id/spnTenSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-        <SeekBar
-            android:id="@+id/seekBar2"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="10"
-            android:progress="0" />
+    <EditText
+        android:id="@+id/txtSoLuong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Quantity"
+        android:importantForAutofill="no"
+        android:inputType="number" />
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/spnTenSP" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Số lượng"
-            android:id="@+id/txtSoLuong"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/btnAdd"
-            android:text="Tạo" />
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/Add" />
 
-
-
-    </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>

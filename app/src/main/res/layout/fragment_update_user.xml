@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Fragment.FraUser.updateUser">
+    tools:context=".Fragment.FraUser.UpdateUserFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

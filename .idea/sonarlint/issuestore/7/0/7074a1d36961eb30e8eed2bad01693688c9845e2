@@ -1,8 +1,0 @@
-
-n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ºÇ‰“úÿÿÿÿ8¶µºä»1
-s
-java:S1450"VRemove the "binding" field and declare it as a local variable in the relevant methods.(šõûò8Ïµºä»1
-x
-java:S1450!"VRemove the "daoCTPN" field and declare it as a local variable in the relevant methods.(£´Äêúÿÿÿÿ8Ïµºä»1
-R
-java:S1144L"5Remove this unused private "transferFragment" method.(Ð»±Ü8²Æ¢Þ¾1

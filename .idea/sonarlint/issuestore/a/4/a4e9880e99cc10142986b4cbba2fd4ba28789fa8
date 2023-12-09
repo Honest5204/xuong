@@ -1,12 +1,0 @@
-
-L
-java:S1066˜"/Merge this if statement with the enclosing one.(ı»Õx8©ÏÏİ¾1
-n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(²™Áıÿÿÿÿ8ªÏÏİ¾1
-o
-java:S1450"RRemove the "dao" field and declare it as a local variable in the relevant methods.(æ€ºî8ÊÏÏİ¾1
-I
-java:S16027",Remove useless curly braces around statement(ƒŞÚ°8ÏÏÏİ¾1
-I
-java:S1602:",Remove useless curly braces around statement(éÇ¢8ÑÏÏİ¾1
-“
-java:S6201†"pReplace this instanceof check and cast with 'instanceof FragmentInteractionListener fragmentinteractionlistener'(ËÏˆ´ûÿÿÿÿ8ÚÏÏİ¾1

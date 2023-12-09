@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -21,7 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/baseline_image_24" />
+        android:src="@drawable/baseline_image_24"
+        android:importantForAccessibility="no" />
 
     <EditText
         android:id="@+id/txtTenSP"
@@ -29,7 +31,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:hint="Tên sản phảm" />
+        android:hint="@string/Productname"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/txtGiaSP"
@@ -37,7 +40,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:hint="Giá sản phẩm" />
+        android:hint="@string/Productprice"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/txtSoLuong"
@@ -45,11 +49,12 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:hint="Số lượng"/>
+        android:hint="@string/Quantity"
+        android:importantForAutofill="no" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cập nhật "
+        android:text="@string/Update"
         android:layout_gravity="center"
         android:id="@+id/btnThemSP"/>
 </LinearLayout>

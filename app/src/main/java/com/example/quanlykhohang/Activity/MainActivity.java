@@ -1,7 +1,5 @@
 package com.example.quanlykhohang.Activity;
 
-import static androidx.core.content.ContentProviderCompat.requireContext;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,28 +7,35 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.quanlykhohang.Fragment.FraThongKe.baoCao;
-import com.example.quanlykhohang.Fragment.FraProduct.fragment_product;
-import com.example.quanlykhohang.Fragment.FraUser.fragment_user;
-import com.example.quanlykhohang.Fragment.FraPhieuNhap.phieuNhap;
-import com.example.quanlykhohang.Fragment.FraPhieuXuat.phieuXuat;
+import com.example.quanlykhohang.Fragment.FraPhieuNhap.PhieuNhapFragment;
+import com.example.quanlykhohang.Fragment.FraPhieuXuat.PhieuXuatFragment;
+import com.example.quanlykhohang.Fragment.FraProduct.FragmentProductFragment;
+import com.example.quanlykhohang.Fragment.FraThongKe.BaoCaoFragment;
+import com.example.quanlykhohang.Fragment.FraUser.FragmentUserFragment;
 import com.example.quanlykhohang.Interface.FragmentInteractionListener;
 import com.example.quanlykhohang.Interface.MenuController;
 import com.example.quanlykhohang.Interface.TransFerFra;
+import com.example.quanlykhohang.Interface.UserContract;
+import com.example.quanlykhohang.Presenter.UserPresenter;
 import com.example.quanlykhohang.R;
-import com.example.quanlykhohang.dao.userDAO;
 import com.example.quanlykhohang.databinding.ActivityMainBinding;
+import com.example.quanlykhohang.model.User;
 
-public class MainActivity extends AppCompatActivity implements MenuController, FragmentInteractionListener, TransFerFra {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements MenuController, FragmentInteractionListener, TransFerFra, UserContract.View {
     private ActivityMainBinding binding;
-    private fragment_product yourFragment;
-    private userDAO dao;
+    private FragmentProductFragment yourFragment;
+    private UserPresenter userPresenter;
+    private TextView txtTen, fullName;
+    private ImageView imgAvatar;
 
 
     @Override
@@ -40,31 +45,29 @@ public class MainActivity extends AppCompatActivity implements MenuController, F
         setContentView(binding.getRoot());
 
         var header = binding.nav.getHeaderView(0);
-        TextView txtTen = header.findViewById(R.id.txtNamess);
-        TextView fullName = header.findViewById(R.id.txtFullNames);
-        ImageView imgAvatar = header.findViewById(R.id.imgAvatarr);
+        txtTen = header.findViewById(R.id.txtNamess);
+        fullName = header.findViewById(R.id.txtFullNames);
+        imgAvatar = header.findViewById(R.id.imgAvatarr);
 
         var sharedPreferences = this.getSharedPreferences("INFOR", MODE_PRIVATE);
         var id = sharedPreferences.getString("ID", "");
-        dao = new userDAO(this);
-        var list = dao.getAllUser(id);
-        imgAvatar.setImageURI(Uri.parse(list.get(0).getAvatar()));
-        fullName.setText(list.get(0).getName());
-        txtTen.setText(list.get(0).getPosition());
+        userPresenter = new UserPresenter(this, this);
+        userPresenter.getUserDetails(id);
         setSupportActionBar(binding.toolbar);
         var actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.baseline_menu_24);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fame, new phieuNhap()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fame, new PhieuNhapFragment()).commit();
         binding.nav.setNavigationItemSelectedListener(item -> {
             Fragment fragment = null;
             var itemId = item.getItemId();
             if (itemId == R.id.product) {
-                fragment = new fragment_product();
+                fragment = new FragmentProductFragment();
             } else if (itemId == R.id.user) {
-                fragment = new fragment_user();
-            }  else if (itemId == R.id.dangxuat) {
-                var intent = new Intent(MainActivity.this, Login.class);
+                fragment = new FragmentUserFragment();
+            } else if (itemId == R.id.dangxuat) {
+                var intent = new Intent(MainActivity.this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivities(new Intent[]{intent});
             }
@@ -82,11 +85,11 @@ public class MainActivity extends AppCompatActivity implements MenuController, F
             Fragment fragment = null;
             int itemId = item.getItemId();
             if (itemId == R.id.baocao) {
-                fragment = new baoCao();
+                fragment = new BaoCaoFragment();
             } else if (itemId == R.id.phieunhap) {
-                fragment = new phieuNhap();
+                fragment = new PhieuNhapFragment();
             } else {
-                fragment = new phieuXuat();
+                fragment = new PhieuXuatFragment();
             }
             getSupportFragmentManager()
                     .beginTransaction()
@@ -113,7 +116,6 @@ public class MainActivity extends AppCompatActivity implements MenuController, F
     }
 
 
-
     @Override
     public void onFragmentBackPressed() {
         boolean isExpanded = yourFragment.isExpanded();
@@ -135,14 +137,33 @@ public class MainActivity extends AppCompatActivity implements MenuController, F
     }
 
     @Override
-    public void transferFragment(Fragment fragment,String name) {
+    public void transferFragment(Fragment fragment, String name) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fame, fragment)
+                .replace(R.id.fame, fragment)
                 .addToBackStack(name)
                 .commit();
     }
-    private void updatedUserInterface() {
+
+    @Override
+    public void showUsersList(List<User> userList) {
+
+    }
+
+    @Override
+    public void showUserDetails(User user) {
+        imgAvatar.setImageURI(Uri.parse(user.getAvatar()));
+        fullName.setText(user.getName());
+        txtTen.setText(user.getPosition());
+    }
+
+    @Override
+    public void showErrorMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showSuccessMessage(String message) {
 
     }
 }

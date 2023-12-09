@@ -1,6 +1,4 @@
 
 n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÑÔ›éûÿÿÿÿ8¬ÍÒÎ»1
-c
-java:S1854Æ"@Remove this useless assignment to local variable "monthYearStr".(Ü´‘­şÿÿÿÿ8ĞÎÒÎ»1
 T
 java:S1481Æ"1Remove this unused "monthYearStr" local variable.(Ü´‘­şÿÿÿÿ8ÑÎÒÎ»1

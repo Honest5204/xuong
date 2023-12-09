@@ -1,7 +1,0 @@
-
-x
-java:S1450"VRemove the "binding" field and declare it as a local variable in the relevant methods.(¸¢»Ÿùÿÿÿÿ8…ğ©ë´1
-t
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¨Œşÿÿÿÿ8¡œ¤ë´1
-Z
-java:S1128">Remove this unused import 'android.content.SharedPreferences'.(íÎÉr8¿Û’º1

@@ -1,5 +1,6 @@
 package com.example.quanlykhohang.database;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -90,31 +91,25 @@ public class DbHelper extends SQLiteOpenHelper {
         }
     }
 
+    @SuppressLint("SimpleDateFormat")
     public void updateLastAction(String userId) {
         var db = this.getWritableDatabase();
         var values = new ContentValues();
-
         var sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         var currentDateandTime = sdf.format(new Date());
-
         values.put("LASTACTION", currentDateandTime);
-
         db.update("USER", values, "ID = ?", new String[]{userId});
         db.close();
     }
 
+    @SuppressLint("SimpleDateFormat")
     public void updateLasLogin(String userId) {
         var db = this.getWritableDatabase();
         var values = new ContentValues();
-
         var sdfDate = new SimpleDateFormat("dd-MM-yyyy");
         var currentDate = sdfDate.format(new Date());
-
         values.put("LASTLOGIN", currentDate);
-
         db.update("USER", values, "ID = ?", new String[]{userId});
         db.close();
     }
-
-
 }

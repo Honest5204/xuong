@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     android:background="@color/white"
-    tools:context=".Fragment.FraThongKe.thongkeNgay">
+    tools:context=".Fragment.FraThongKe.ThongKeNgayFragment">
 
     <ScrollView
         android:layout_width="match_parent"

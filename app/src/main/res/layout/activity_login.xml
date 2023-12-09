@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.Login">
+    tools:context=".Activity.LoginActivity">
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Input account"
+        android:hint="@string/input_account"
         app:startIconDrawable="@drawable/baseline_person_24"
         app:startIconTint="#1E2940"
         app:boxBackgroundMode="outline"
@@ -41,7 +41,7 @@
         android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Input password"
+        android:hint="@string/input_password"
         app:startIconDrawable="@drawable/lock_24"
         app:startIconTint="#1E2940"
         app:boxBackgroundMode="outline"
@@ -74,7 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="Remember password" />
+        android:text="@string/remember_password" />
 
     <Button
         android:layout_marginHorizontal="20dp"
@@ -83,5 +83,5 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple_500"
         android:textColor="@color/white"
-        android:text="Sign in" />
+        android:text="@string/sign_in" />
 </LinearLayout>
