@@ -161,11 +161,3 @@ z
 Japp/src/main/java/com/example/quanlykhohang/Interface/ProductContract.java,9\7\979ab2809482729b892512659ca6f02051185c02
 {
 Kapp/src/main/java/com/example/quanlykhohang/Presenter/ProductPresenter.java,2\5\25feb42bf840208e315d1678cd0c07553e047b89
-w
-Gapp/src/main/java/com/example/quanlykhohang/Interface/BillContract.java,8\6\86fb9b2c090c22503040140c6c6f6ea0dc57e38d
-x
-Happ/src/main/java/com/example/quanlykhohang/Presenter/BillPresenter.java,2\a\2a97a50856205b2dd4abb42e87b20aa8ee7df37d
-}
-Mapp/src/main/java/com/example/quanlykhohang/Interface/BillDetailContract.java,8\d\8d4bc3a9632b94e5f594dc79f20037dc369a5c4f
-~
-Napp/src/main/java/com/example/quanlykhohang/Presenter/BillDetailPresenter.java,6\6\665f302eac4b51061dc40134a7a16fd6f86b2664
