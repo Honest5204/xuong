@@ -1,0 +1,8 @@
+
+m	java:S117e"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ÀÙÚ8‡£æÙÄ1
+i
+java:S2095"FUse try-with-resources or close this "DbHelper" in a "finally" clause.(ùâ¸çüÿÿÿÿ8í—ôİÄ1
+£
+java:S1186G"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ñ®çâùÿÿÿÿ8×£æÙÄ1
+
+java:S1186L"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‰ÁÕ–8×£æÙÄ1

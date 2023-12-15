@@ -1,0 +1,10 @@
+
+
+java:S1319"dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(Üãâ¡üÿÿÿÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ˆŸëÑ
+G
+java:S1602A",Remove useless curly braces around statement(ëÏö¼üÿÿÿÿ
+B
+java:S1602E",Remove useless curly braces around statement(óÂ¶Î
+B
+java:S1602R",Remove useless curly braces around statement(®»™é

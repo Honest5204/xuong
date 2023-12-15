@@ -1,0 +1,5 @@
+
+m	java:S117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ÀÙÚ8Ç÷µÚÄ1
+m	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ÀÙÚ8ÒİÄ1
+i
+java:S2095"FUse try-with-resources or close this "DbHelper" in a "finally" clause.(ùâ¸çüÿÿÿÿ8ÕÓ×İÄ1
